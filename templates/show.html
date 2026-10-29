@@ -22,19 +22,28 @@
     <th>Email</th>
     <th>Subject</th>
     <th>Message</th>
+    <th>Action</th>
 </tr>
 
-  {%for x in all%}
+
 
   <tr>
 <td>{{x.name}}</td>
 <td>{{x.email}}</td>
 <td>{{x.subject}}</td>
 <td>{{x.message}}</td>
+<td>
+
+<a href="/edit/{{x.id}}" class="btn btn-warning">Edit</a>
+<a href="/delete/{{x.id}}" class="btn btn-danger">Delete</a>
+<a href="{%url 'pay'%}" class="btn btn-primary">Pay</a>
+
+
+</td>
 </tr>
 
 
-{%endfor%}
+
 
 
 

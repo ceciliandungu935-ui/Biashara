@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+{%load static%}
+<link rel="stylesheet" href="{%static 'assets/vendor/bootstrap/css/bootstrap.min.css'%}">
+<script src="{%static 'assets/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+
+
+</head>
+<body>
+   
+    <h2 class="text-center">Transaction History</h2>
+<table border="1" class="table table-bordered container">
+    <tr>
+        <th>Phone Number</th>
+        <th>Amount</th>
+        <th>Transaction ID</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    {% for transaction in transactions %}
+    <tr>
+        <td>{{ transaction.phone_number }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.transaction_id }}</td>
+        <td>{{ transaction.status }}</td>
+        <td>{{ transaction.date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    
+
+
+
+
+
+
+
+</body>
+</html>
